@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Loading from "../image/amalie-steiness.gif";
 import ProductsItem from "./ProductsItem";
-// import Search from "../image/Search.jpg";
 import "./Products.style.css";
 
 export const ProductsList = () => {
@@ -11,6 +10,7 @@ export const ProductsList = () => {
 
   useEffect(() => {
     fetchDataResult();
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchInput]);
 
@@ -42,17 +42,15 @@ export const ProductsList = () => {
           placeholder="Search your product"
           onChange={(e) => setSearchInput(e.target.value)}
         />
-        {/* <button>
-          <img src={Search} alt="search gify" />
-        </button> */}
+       
       </div>
-      <div className="product-list">
+    
         {loading ? (
           <img src={Loading} alt="loading gify" />
         ) : (
           <ProductsItem products={products} />
         )}
       </div>
-    </div>
+   
   );
 };
